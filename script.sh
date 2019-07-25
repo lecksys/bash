@@ -1,6 +1,14 @@
-#!/bin/bash
+#!bin/bash
 
-echo "Текущий пользователь $USER"
+#Считаем количество файлов в текущей папке
 
-date_now=$(date +%d-%m-%Y)
-echo "Текущая дата $date_now"
+count_dir=$(ls | wc -l)
+
+if [ $count_dir -ne 0 ]
+then
+    echo "В текущей директории $count_dir файлов"
+else
+    echo "Папка пуста!"
+fi
+
+exit 0
